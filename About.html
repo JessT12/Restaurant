@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Medi</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Limelight&display=swap" rel="stylesheet">
+  
+<style>
+body {
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  font-family:"Limelight", cursive;
+  background-color: #0b0929;
+}
+
+main{
+    flex: 1;
+}
+
+
+ul.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #0b0929;
+  align-items: center;
+}
+
+ul.topnav li:first-child {
+  flex: 1;
+}
+
+ul.topnav li a {
+  display: block;
+  color: #c5c3a8;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Limelight", cursive;
+}
+
+ul.topnav li a:hover {
+  background-color: #6e7597;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+ul.topnav li a.logo {
+  font-family: "Fascinate Inline", cursive;
+  font-size: 25px;
+  color: #c5c3a8;
+  
+}
+
+ul.topnav li a.logo:hover {
+  background-color: transparent;
+  padding: 10px 20px;
+}
+
+
+
+.section{
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  padding:60px;
+  gap:20px;
+  height: 40vh;
+}
+
+.section img{
+  width:45%;
+  height:320px;
+  object-fit:cover;
+}
+
+.section-text{
+  width:50%;
+  font-size:18px;
+}
+
+/* Different section colors */
+
+.about-section{
+  background:#6e7597;
+  color:white;
+}
+
+.mission-section{
+  background:#eeecd2;
+  color:#0b0929;
+}
+
+/* Reverse mission layout */
+
+.mission-section{
+  flex-direction:row-reverse;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: #0b0929;
+  color: #c5c3a8;
+  font-family: "Limelight", cursive;
+  padding: 25px 20px;
+}
+
+.footer-container {
+  display: flex;          /* makes children appear side by side */
+  justify-content: space-around; /* spreads them evenly */
+  align-items: center;    /* vertical centering */
+  flex-wrap: wrap;        /* wraps items on small screens */
+}
+
+.footer-item {
+  margin: 5px 10px;      /* spacing between items */
+}
+
+.footer-item a {
+  color: #c5c3a8;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+
+/* MOBILE DESIGN */
+
+@media (max-width:768px){
+
+.section{
+  flex-direction:column;
+  text-align:center;
+}
+
+.section img{
+  width:90%;
+}
+
+.section-text{
+  width:100%;
+}
+
+}
+/* hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: #c5c3a8;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* container for links */
+.nav-links {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0b0929;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  /* show menu when clicked */
+  #menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<ul class="topnav">
+
+  <li><a class="logo"> Medi </a></li>
+
+  <!-- Hamburger checkbox -->
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+  <div class="nav-links">
+    <li><a href="Homepage.html">Home</a></li>
+    <li><a href="Menu.html">Menu</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+    <li><a href="About.html">About</a></li>
+  </div>
+
+</ul>
+
+<main>
+<section class="section about-section">
+    <div class="section-text">
+        <h1>About Us</h1>
+        <p>Medi is a blend of many Mediterranean cultures providing a diverse food palette for all customers to enjoy.
+            From the drinks to the chef's special, you can get a taste of the Mediterranean with just one bite. With 
+            authentic artwork and design, feel as if you are dining in the islands. Whether you’re here for a casual meal or a 
+            special celebration, Medi brings the heart of the Mediterranean straight to your table. 
+        </p>
+    </div>
+    <img src="https://travelfoodpeople.com/wp-content/uploads/2020/06/IMG_5330.jpg">
+</section>
+
+<section class="section mission-section">
+    <div class="section-text">
+        <h1>Our Mission</h1>
+        <p>Our mission is to bring the vibrant spirit of Mediterranean dining to NYC.
+We focus on fresh ingredients, authentic recipes, and a welcoming environment
+that makes every visit feel special. We want all people to indulge in the delicious Mediterranean culture.</p>
+    </div>
+<img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/8b/71/f9/sidewalk-cafe.jpg?w=800&h=800&s=1">
+
+</section>
+</main>
+
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-item">
+      <p>Business Hours</p>
+      <p>Mon-Fri: 8am - 10pm<br>Sat-Sun: 11am - 11pm</p>
+    </div>
+
+    <div class="footer-item">
+      <p>Social Media</p>
+      <a href="https://www.facebook.com/medinyc" target="_blank" style="text-decoration: underline"><i class="fa fa-facebook-square" style="font-size:20px"></i> @medinewyork</a><br>
+      <a href="https://www.instagram.com/medinyc/" target="_blank" style="text-decoration: underline"><i class="fa fa-instagram" style="font-size:20px"></i> @medirestaurantnyc</a>
+    </div>
+</footer>
+</body>
+</html>

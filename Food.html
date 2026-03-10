@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My restaurant</title>
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Limelight&display=swap" rel="stylesheet">
+  
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eeecd2;
+}
+
+ul.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #0b0929;
+  align-items: center;
+}
+
+ul.topnav li:first-child {
+  flex: 1;
+}
+
+ul.topnav li a {
+  display: block;
+  color: #c5c3a8;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Limelight", cursive;
+}
+
+ul.topnav li a:hover {
+  background-color: #6e7597;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+ul.topnav li a.logo {
+  font-family: "Fascinate Inline", cursive;
+  font-size: 25px;
+  color: #c5c3a8;
+  
+}
+
+ul.topnav li a.logo:hover {
+  background-color: transparent;
+  padding: 10px 20px;
+}
+
+
+
+
+
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(155, 125, 69, 0.2);
+  transition: 0.3s;
+  width: 15%;
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+
+/* Add some padding inside the card container */
+.container {
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.wrapper {
+    display: flex; /* Makes the child elements sit side by side */
+    justify-content: space-around; /* Distributes space between the cards */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line if the container is too narrow */
+    gap: 20px; /* Adds a gap between cards (newer CSS property) */
+}
+
+@media (max-width: 768px) {
+
+
+  /* MENU CARDS */
+
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .card img {
+    height: 250px;
+  }
+
+  /* HEADING */
+
+  h2 {
+    text-align: center;
+    padding-left: 0;
+    font-size: 40px;
+  }
+
+}
+/* hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: #c5c3a8;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* container for links */
+.nav-links {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0b0929;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  /* show menu when clicked */
+  #menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+}
+
+footer {
+  background-color: #0b0929;
+  color: #c5c3a8;
+  font-family: "Limelight", cursive;
+  padding: 25px 20px;
+}
+
+.footer-container {
+  display: flex;          /* makes children appear side by side */
+  justify-content: space-around; /* spreads them evenly */
+  align-items: center;    /* vertical centering */
+  flex-wrap: wrap;        /* wraps items on small screens */
+}
+
+.footer-item {
+  margin: 5px 10px;      /* spacing between items */
+}
+
+.footer-item a {
+  color: #c5c3a8;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+</style>
+</head>
+
+<body>
+<ul class="topnav">
+
+  <li><a class="logo"> Azure Cove </a></li>
+
+  <!-- Hamburger checkbox -->
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+  <div class="nav-links">
+    <li><a href="Homepage.html">Home</a></li>
+    <li><a href="Menu.html">Menu</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+    <li><a href="About.html">About</a></li>
+  </div>
+
+</ul>
+
+<h4 style="font-family: 'Limelight', cursive; color: hsl(245, 64%, 10%); font-size: 40px; padding-left:50px">Appetizers</h4>
+
+<div class="wrapper">
+<div class="card">
+  <img src="https://sixhungryfeet.com/wp-content/uploads/2020/11/Baba-Ganoush-3.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(245, 64%, 10%);"><b>Baba Ganoush ~ $15</b></h4>
+    <p><i>Creamy Middle Eastern dip made with eggplant, tahini, lemon juice, and garlic served with pita bread</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://www.themediterraneandish.com/wp-content/uploads/2019/12/Stuffed-Grape-Leaves-Recipe-Dolmas-15.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(245, 64%, 10%);"><b>Dolma ~ $12</b></h4>
+    <p><i>Grape leaves filled with minced meat, rice, herbs, and spices</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://feelgoodfoodie.net/wp-content/uploads/2024/03/Falafel-TIMG.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(245, 64%, 10%);"><b>Crispy Falafel ~ $10</b></h4>
+    <p><i>Deep fried chickpea balls seasoned with garlic, onions, cumin, and fresh cumin</i></p>
+  </div>
+  </div>
+</div>
+
+
+
+
+<h4 style="font-family: 'Limelight', cursive; color: hsl(245, 64%, 10%); font-size: 40px; padding-left:50px">Main Courses</h4>
+
+<div class="wrapper">
+<div class="card">
+  <img src="https://www.howewelive.com/wp-content/uploads/2025/07/mediterranean-chicken-wrap-2-1.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(245, 64%, 10%);"><b>Chicken Wrap ~ $24</b></h4>
+    <p><i>Grilled chicken breast served in a warm tortilla with fresh vegetables and tzatziki sauce</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://somuchfoodblog.com/wp-content/uploads/2022/06/chicken-gyro12.jpg" style="width:100%">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(245, 64%, 10%);"><b>Greek Gyro ~ $26</b></h4>
+    <p><i>Beef gyro, lettuce, tomatoes, onions, and tzatziki sauce in a pita bread. Served with shoestring fries</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://www.marthastewart.com/thmb/yXxnu2Vl8m6l8clYdg9X1Odn1Vg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MSL-897878-cream-of-broccoli-soup-horiz-1023-97e0be88ff0d4762816ea164f3921553.jpg" style="width:100%">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(245, 64%, 10%);"><b>Broccoli Tahini Soup ~ $28</b></h4>
+    <p><i>Creamy soup made with fresh broccoli and tahini, served with warm pita bread</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://www.theseasonedmom.com/wp-content/uploads/2024/09/apricot-glazed-chicken-9.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(245, 64%, 10%);"><b>Date Glazed Orange Chicken ~ $35</b></h4>
+    <p><i>Roasted chicken served with sauce blended from soaked dates, orange juice, and spices</i></p>
+  </div>
+  </div>
+</div>
+
+
+
+<h4 style="font-family: 'Limelight', cursive; color: hsl(245, 63%, 14%); font-size: 40px; padding-left:50px">Desserts</h4>
+
+<div class="wrapper">
+<div class="card">
+  <img src="https://www.supergoldenbakes.com/wordpress/wp-content/uploads/2023/08/Greek_Baklava-closeup-683x1024.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(245, 64%, 10%);"><b>Flaky Baklava ~ $12</b></h4>
+    <p><i>Crispy layers of phyllo dough filled with nuts and sweet syrup</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://www.allrecipes.com/thmb/ESAngN5r2uCAKvXRnWS60g1VOBo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8654345-bougatsa-ddmfs-5380-hero-3x4-17b0e320c1ae482782d0722a5d26d302.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(245, 64%, 10%);"><b>Bougatsa ~ $10</b></h4>
+    <p><i>Flaky phyllo dough layered with a creamy semolina custard filling</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://www.olivetomato.com/wp-content/uploads/2024/11/Melomakarona-Authentic-Greek-Christmas-Honey-Cookies-15-500x375.jpeg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(245, 63%, 15%);"><b>Melomakarona ~ $8</b></h4>
+    <p><i>Soft, oval-shaped cookies soaked in a honey-spice syrup, then topped with walnuts</i></p>
+  </div>
+  </div>
+
+</div>
+<br><br><br><br>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-item">
+      <p>Business Hours</p>
+      <p>Mon-Fri: 8am - 10pm<br>Sat-Sun: 11am - 11pm</p>
+    </div>
+
+    <div class="footer-item">
+      <p>Social Media</p>
+      <a href="https://www.facebook.com/medinyc" target="_blank" style="text-decoration: underline"><i class="fa fa-facebook-square" style="font-size:20px"></i> @medinewyork</a><br>
+      <a href="https://www.instagram.com/medinyc/" target="_blank" style="text-decoration: underline"><i class="fa fa-instagram" style="font-size:20px"></i> @medirestaurantnyc</a>
+    </div>
+</footer>
+
+
+</body>
+</html>

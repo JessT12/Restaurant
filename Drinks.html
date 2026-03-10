@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medi</title>
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Limelight&display=swap" rel="stylesheet">
+  
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eeecd2;
+}
+
+ul.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #0b0929;
+  align-items: center;
+}
+
+ul.topnav li:first-child {
+  flex: 1;
+}
+
+ul.topnav li a {
+  display: block;
+  color: #c5c3a8;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Limelight", cursive;
+}
+
+ul.topnav li a:hover {
+  background-color: #6e7597;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+ul.topnav li a.logo {
+  font-family: "Fascinate Inline", cursive;
+  font-size: 25px;
+  color: #c5c3a8;
+  
+}
+
+ul.topnav li a.logo:hover {
+  background-color: transparent;
+  padding: 10px 20px;
+}
+
+
+
+
+
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(155, 125, 69, 0.2);
+  transition: 0.3s;
+  width: 15%;
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+
+/* Add some padding inside the card container */
+.container {
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.wrapper {
+    display: flex; /* Makes the child elements sit side by side */
+    justify-content: space-around; /* Distributes space between the cards */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line if the container is too narrow */
+    gap: 20px; /* Adds a gap between cards (newer CSS property) */
+    padding-top: 40px;
+}
+
+@media (max-width: 768px) {
+
+
+  /* MENU CARDS */
+
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .card img {
+    height: 250px;
+  }
+
+  /* HEADING */
+
+  h2 {
+    text-align: center;
+    padding-left: 0;
+    font-size: 40px;
+  }
+
+}
+
+/* hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: #c5c3a8;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* container for links */
+.nav-links {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0b0929;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  /* show menu when clicked */
+  #menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+}
+
+
+footer {
+  background-color: #0b0929;
+  color: #c5c3a8;
+  font-family: "Limelight", cursive;
+  padding: 25px 20px;
+}
+
+.footer-container {
+  display: flex;          /* makes children appear side by side */
+  justify-content: space-around; /* spreads them evenly */
+  align-items: center;    /* vertical centering */
+  flex-wrap: wrap;        /* wraps items on small screens */
+}
+
+.footer-item {
+  margin: 5px 10px;      /* spacing between items */
+}
+
+.footer-item a {
+  color: #c5c3a8;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+</style>
+</head>
+
+<body>
+<ul class="topnav">
+
+  <li><a class="logo"> Medi </a></li>
+
+  <!-- Hamburger checkbox -->
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+  <div class="nav-links">
+    <li><a href="Homepage.html">Home</a></li>
+    <li><a href="Menu.html">Menu</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+    <li><a href="About.html">About</a></li>
+  </div>
+
+</ul>
+
+<h4 style="font-family: 'Limelight', cursive; color: hsl(278, 64%, 10%); font-size: 40px; padding-left:50px">Drinks</h4>
+
+<div class="wrapper">
+<div class="card">
+  <img src="https://assets.rbl.ms/31006784/origin.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(278, 64%, 10%);"><b>Mediterranean Mint Lemonade</b></h4>
+    <p><i>$8</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://www.themediterraneandish.com/wp-content/uploads/2023/08/Ayran-WEB-10.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(278, 64%, 10%);"><b>Ayran</b></h4>
+    <p><i>$9</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://www.thebossykitchen.com/wp-content/uploads/2018/02/Turkish-Coffee-square-picture0-500x500.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(278, 64%, 10%);"><b>Turkish Coffee</b></h4>
+    <p><i>$6</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://www.themediterraneandish.com/wp-content/uploads/2022/10/Arabic-mint-tea-2.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(278, 64%, 10%);"><b>Arabic Tea</b></h4>
+    <p><i>$6</i></p>
+  </div>
+  </div>
+</div>
+
+<div class="wrapper">
+<div class="card">
+  <img src="https://thegreekdeli.com/wp-content/uploads/2021/02/A-Glass-of-Greek-Red-Wine-a-Day-768x432.webp">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(278, 64%, 10%);"><b>Red Wine</b></h4>
+    <p><i>$18</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://www.acommunaltable.com/wp-content/uploads/2021/08/Single-glass-of-apple-martini-cocktail-720x1080.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(278, 64%, 10%);"><b>Big Apple Martini</b></h4>
+    <p><i>$22</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://www.everyday-delicious.com/wp-content/uploads/2022/06/strawberry-basil-cocktail-everyday-delicious-1.jpg">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(278, 64%, 10%);"><b>Strawberry Basil Cocktail</b></h4>
+    <p><i>$18</i></p>
+  </div>
+  </div>
+
+  <div class="card">
+  <img src="https://abarabove.com/wp-content/uploads/2025/07/abaraboveteam_a_summer-style_food_blog_photo_of_peach_sangria_99a2afce-7610-4aff-ac9e-a1d29bb10653_3.png">
+  <div class="container">
+    <h4 style="font-family: 'Limelight', cursive; color: hsl(278, 64%, 10%);"><b>Peach Sangria</b></h4>
+    <p><i>$20</i></p>
+  </div>
+  </div>
+</div>
+
+<br><br><br><br>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-item">
+      <p>Business Hours</p>
+      <p>Mon-Fri: 8am - 10pm<br>Sat-Sun: 11am - 11pm</p>
+    </div>
+
+    <div class="footer-item">
+      <p>Social Media</p>
+      <a href="https://www.facebook.com/medinyc" target="_blank" style="text-decoration: underline"><i class="fa fa-facebook-square" style="font-size:20px"></i> @medinewyork</a><br>
+      <a href="https://www.instagram.com/medinyc/" target="_blank" style="text-decoration: underline"><i class="fa fa-instagram" style="font-size:20px"></i> @medirestaurantnyc</a>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>
