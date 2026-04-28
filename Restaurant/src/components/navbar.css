@@ -1,0 +1,73 @@
+ul.topnav li:first-child {
+  flex: 1;
+}
+
+ul.topnav li a {
+  display: block;
+  color: #c5c3a8;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Limelight", cursive;
+}
+
+ul.topnav li a:hover {
+  background-color: #6e7597;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+ul.topnav li a.logo {
+  font-family: "Fascinate Inline", cursive;
+  font-size: 25px;
+  color: #c5c3a8;
+  
+}
+
+ul.topnav li a.logo:hover {
+  background-color: transparent;
+  padding: 10px 20px;
+}
+
+
+#menu-toggle {
+  display: none;
+}
+
+/*hamburger menu*/
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: #c5c3a8;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+}
+
+/*responsive*/
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0b0929;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  /* show menu when clicked */
+  #menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+}
