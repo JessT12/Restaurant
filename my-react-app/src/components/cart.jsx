@@ -37,10 +37,7 @@ const Cart = ({ isOpen, setIsCartOpen, cart, removeFromCart, clearCart }) => {
         Clear Cart
       </button>
 
-      <button
-        className="closeCart"
-        onClick={() => setIsCartOpen(false)}
-      >
+      <button className="closeCart" onClick={() => setIsCartOpen(false)}>
         Close
       </button>
       </div>
