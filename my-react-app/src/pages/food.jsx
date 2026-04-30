@@ -83,18 +83,18 @@ function Food() {
                 {items.map((item, index) => (
                 <div className="card" key={index}>
                     <img src={item.image} alt={item.name} />
-                <div className="container">
-                <h4>{item.name}</h4>
-                <p>${item.price}</p>
-                <p className="description">{item.description}</p>
+                        <div className="container">
+                            <h4>{item.name}</h4>
+                            <p>${item.price}</p>
+                            <p className="description">{item.description}</p>
+                        </div>
+                    <button className="add-cart" onClick={() => addToCart(item)}>+</button>
                 </div>
-                <button className="add-cart" onClick={() => addToCart(item)}>+</button>
+                ))}
             </div>
-            ))}
-        </div>
         </div>
         ))}
-        </div>
+    </div>
   );
 }
 

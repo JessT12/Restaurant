@@ -1,18 +1,142 @@
 .cart-tab {
+  width: 35vw;
+  background-color: #c5c3a8;
+  color: black;
   position: fixed;
+  z-index: 1000;
   top: 0;
   right: 0;
-  width: 400px;
-  height: 100vh;
-  overflow-y: auto;
-  background: #c5c3a8;
+  bottom: 0;
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  z-index: 1000;
+  pointer-events: none;   
   display: grid;
-  grid-template-rows: 70px auto 1fr 50px; /* header, clear btn, items, total */
+  grid-template-rows: 70px 1fr 40px;
+  overflow-y: auto;
 }
 
 .cart-tab.open {
   transform: translateX(0);
+  pointer-events: auto;
 }
+
+
+/* Cart header */
+.cart-header {
+  text-align: center;
+  margin: 0;
+  padding-top: 20px;
+  font-family: "Fascinate Inline", cursive;
+}
+
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #0b0929;
+  padding: 10px 0;
+  gap: 10px;
+}
+
+/* Product image */
+.cart-item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Product info */
+.cart-item-info {
+  flex: 1; /* takes remaining space */
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cart-item-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}
+
+.cart-item-price,
+.cart-item-quantity {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Remove button */
+.cart-item-remove {
+  background-color: #0b0929;
+  color: #c5c3a8;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Limelight", cursive;
+}
+
+.cart-item-remove:hover {
+  background-color: #6e7597;
+}
+
+/* Cart total */
+.cart-total {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 10px;
+}
+
+
+/* Close button */
+.closeCart {
+  background-color: #0b0929;
+  color: #c5c3a8;
+  font-size: 18px;
+  font-family: "Limelight", cursive;
+  border: none;
+  padding: 10px 20px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.closeCart:hover {
+  background-color: #6e7597;
+}
+
+/* Scrollbar for long carts */
+.cart-tab::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cart-tab::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 4px;
+}
+
+.cart-tab::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.clearCart {
+  background-color: #0b0929;
+  color: #c5c3a8;
+  font-size: 18px;
+  font-family: "Limelight", cursive;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 5px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  cursor: pointer;
+  width: 30%;
+}
+
+.clearCart:hover {
+  background-color: #6e7597;
+}
+

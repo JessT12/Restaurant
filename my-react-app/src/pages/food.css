@@ -16,7 +16,6 @@
 }
 
 
-/* Add some padding inside the card container */
 .container {
   text-align: center;
 }
@@ -58,7 +57,7 @@
   border-radius: 50%;
   position: absolute;
   right: 1.5vw;
-  top: 1.5vh;
+  top: 2vh;
   cursor: pointer;
 }
 
