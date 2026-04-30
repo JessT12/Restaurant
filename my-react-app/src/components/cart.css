@@ -1,5 +1,5 @@
 .cart-tab {
-  width: 35vw;
+  width: 400px;
   background-color: #c5c3a8;
   color: black;
   position: fixed;
@@ -9,9 +9,9 @@
   bottom: 0;
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  pointer-events: none;   
-  display: grid;
-  grid-template-rows: 70px 1fr 40px;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
   overflow-y: auto;
 }
 
@@ -24,16 +24,15 @@
 /* Cart header */
 .cart-header {
   text-align: center;
-  margin: 0;
-  padding-top: 20px;
+  flex-shrink: 0;
+  font-size: 30px;
+  padding: 20px 40px;
   font-family: "Fascinate Inline", cursive;
 }
-
 
 .cart-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   border-bottom: 1px solid #0b0929;
   padding: 10px 0;
   gap: 10px;
@@ -41,8 +40,8 @@
 
 /* Product image */
 .cart-item-img {
-  width: 60px;
-  height: 60px;
+  width: 9vw;
+  height: 9vw;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -53,6 +52,7 @@
   display: flex;
   flex-direction: column;
   gap: 3px;
+  text-align: left;
 }
 
 .cart-item-name {
@@ -73,6 +73,7 @@
   color: #c5c3a8;
   border: none;
   padding: 5px 10px;
+  margin-right: 10px;
   border-radius: 5px;
   cursor: pointer;
   font-family: "Limelight", cursive;
@@ -101,6 +102,7 @@
   padding: 10px 20px;
   height: 60px;
   cursor: pointer;
+  width: 100%;
 }
 
 .closeCart:hover {
@@ -109,16 +111,7 @@
 
 /* Scrollbar for long carts */
 .cart-tab::-webkit-scrollbar {
-  width: 8px;
-}
-
-.cart-tab::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,0.3);
-  border-radius: 4px;
-}
-
-.cart-tab::-webkit-scrollbar-track {
-  background-color: transparent;
+  display: none;
 }
 
 .clearCart {
@@ -128,15 +121,19 @@
   font-family: "Limelight", cursive;
   border: none;
   border-radius: 10px;
-  padding: 5px 5px;
-  margin-top: -10px;
-  margin-bottom: 10px;
-  margin-left: 8px;
+  padding: 5px;
   cursor: pointer;
-  width: 30%;
+  width: 40%;
+  margin-bottom: 20px;
 }
 
 .clearCart:hover {
   background-color: #6e7597;
 }
 
+.cart-bottom {
+  position: fixed;
+  bottom: 0;
+  background-color: #c5c3a8;
+  width: 100%;
+}
