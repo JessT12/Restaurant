@@ -1,0 +1,80 @@
+.body-about {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0929;
+  font-family:"Limelight", cursive;
+  color:#c5c3a8;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  gap: 20px;
+  min-height: 40vh;
+}
+
+.section img {
+  width: 45%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+
+.section-text {
+  width: 50%;
+  font-size: 18px;
+}
+
+/* About section */
+.about-section {
+  background: #6e7597;
+  color: white;
+  height: auto;
+}
+
+/* Mission section */
+.mission-section {
+  background: #eeecd2;
+  color: #0b0929;
+  flex-direction: row-reverse;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section img,
+  .section-text {
+    width: 80%;
+    font-size: 2vw;
+  }
+
+  .about-section,
+  .mission-section {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .section img {
+    height: 250px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .section img {
+    height: 500px;
+  }
+
+  .section-text {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,80 @@
+.body-menu {
+  margin: 0;
+  padding: 0;
+  background-color: #eeecd2;
+  font-family:"Limelight", cursive;
+  color:#0b0929;
+  min-height: 100vh;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  min-width: 350px;
+  width: 30%;
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 5%;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  text-align: center;
+}
+
+.wrapper {
+    display: flex; /* Makes the child elements sit side by side */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line if the container is too narrow */
+    gap: 20px; /* Adds a gap between cards (newer CSS property) */
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit; /* Inherit the color from the card */
+}
+
+.card img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+.menu-title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+
+@media (max-width: 768px) {
+
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .card img {
+    height: 250px;
+  }
+
+  /* HEADING */
+
+  h2 {
+    text-align: center;
+    padding-left: 0;
+    font-size: 40px;
+  }
+}

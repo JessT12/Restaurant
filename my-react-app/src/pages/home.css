@@ -1,0 +1,38 @@
+.body-home {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0929;
+  font-family:"Limelight", cursive;
+  color:#c5c3a8;
+}
+
+.hero-image {
+  background-image: url("https://gyrocafeatlanta.com/wp-content/uploads/2024/10/salad-with-tomatoes-arugula-burrata-cheese-microgreens-green-stone-background-top-view-copy-space-scaled.jpg");
+  height:100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-title {
+  font-size: 50px;
+  font-family: "Fascinate Inline", cursive;
+  color: #c5c3a8;
+}
+
+.hero-text {
+  text-align: left;
+  position: absolute;
+  top: 20%;
+  left: 7%;
+  max-width: 800px;
+  color: #c5c3a8;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
