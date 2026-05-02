@@ -3,21 +3,20 @@ import { Outlet } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/navbar.jsx";
 import Cart from "./components/cart.jsx";
+import Footer from "./components/footer.jsx";
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cart, setCart] = useState([]);
 
-  // ADD ITEM
+  //Add item to cart
   const addToCart = (item) => {
     setCart((prev) => {
-      const existing = prev.find((i) => i.name === item.name);
+      const existing = prev.find((i) => i.name === item.name);//check to see if the item is already in the cart
 
-      if (existing) {
+      if (existing) {//if exists, increase quantity by 1
         return prev.map((i) =>
-          i.name === item.name
-            ? { ...i, quantity: i.quantity + 1 }
-            : i
+          i.name === item.name ? { ...i, quantity: i.quantity + 1 } : i
         );
       }
 
@@ -25,12 +24,25 @@ function App() {
     });
   };
 
-  // REMOVE ITEM
+    //Update quantity of item in cart
+    const updateQuantity = (name, amount) => {
+    setCart((prev) =>
+      prev
+        .map((item) =>
+          item.name === name
+            ? { ...item, quantity: item.quantity + amount }
+            : item
+        )
+        .filter((item) => item.quantity > 0) // removes item if 0
+    );
+  };
+
+  //Remove item from cart
   const removeFromCart = (name) => {
     setCart((prev) => prev.filter((item) => item.name !== name));
   };
 
-  // CLEAR CART
+  //Clear cart
   const clearCart = () => setCart([]);
 
   return (
@@ -43,9 +55,12 @@ function App() {
         cart={cart}
         removeFromCart={removeFromCart}
         clearCart={clearCart}
+        updateQuantity={updateQuantity}
       />
 
       <Outlet context={{ addToCart }} />
+
+      <Footer />
     </>
   );
 }

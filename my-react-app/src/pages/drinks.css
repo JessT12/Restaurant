@@ -5,6 +5,7 @@
   font-family:"Limelight", cursive;
   color:#0b0929;
   min-height: 100vh;
+  padding-bottom: 5vh;
 }
 
 .card {

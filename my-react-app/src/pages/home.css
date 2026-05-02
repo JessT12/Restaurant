@@ -15,7 +15,7 @@
 }
 
 .hero-title {
-  font-size: 50px;
+  font-size: 60px;
   font-family: "Fascinate Inline", cursive;
   color: #c5c3a8;
 }
@@ -35,4 +35,18 @@
 img {
   max-width: 100%;
   height: auto;
+}
+
+.visit {
+  font-family: "Limelight", cursive;
+  color: #c5c3a8;
+  font-size: 40px;
+  padding-top: 5vh;
+}
+
+@media (max-width: 768px) {
+
+  .hero-text {
+    right: 5%;
+  }
 }

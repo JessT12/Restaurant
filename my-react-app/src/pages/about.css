@@ -13,22 +13,25 @@
   padding: 60px;
   gap: 20px;
   min-height: 40vh;
+  align-items: center;
 }
 
 .section img {
   width: 45%;
-  height: 320px;
+  height: 400px;
   object-fit: cover;
 }
 
 .title {
   font-size: 50px;
-  margin-bottom: 40px;
 }
 
 .section-text {
   width: 50%;
   font-size: 18px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 /* About section */
@@ -75,6 +78,6 @@
   }
 
   .section-text {
-    font-size: 16px;
+    font-size: 20px;
   }
 }

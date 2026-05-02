@@ -43,7 +43,7 @@
 
 .card img {
   width: 100%;
-  height: 520px;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -76,5 +76,15 @@
     text-align: center;
     padding-left: 0;
     font-size: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    width: 100%;
+  }
+
+  .card img {
+    height: 100%;
   }
 }

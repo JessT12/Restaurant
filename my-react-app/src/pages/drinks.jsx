@@ -1,5 +1,6 @@
 import "./drinks.css";
 import { useOutletContext } from "react-router-dom";
+import { useState } from "react";
 
 const drinks = [
     {
@@ -43,29 +44,53 @@ const drinks = [
         image: "https://abarabove.com/wp-content/uploads/2025/07/abaraboveteam_a_summer-style_food_blog_photo_of_peach_sangria_99a2afce-7610-4aff-ac9e-a1d29bb10653_3.png"
     }
 ];
-    
+
 
 function Drinks() {
-  const { addToCart } = useOutletContext();
+    const { addToCart } = useOutletContext();
+    const [addedItems, setAddedItems] = useState(new Set());
 
-  return (
-    <div className="drinks-body">
-        <h1 className="title">Drinks</h1>
+    const handleAdd = (item) => {
+        addToCart({ ...item, id: item.name });
 
-        <div className="wrapper">
-            {drinks.map((drink, index) => (
-                <div className="card" key={index}>
-                    <img src={drink.image} alt={drink.name} />
-                    <div className="container">
-                        <h4>{drink.name}</h4>
-                        <p>${drink.price}</p>
-                    </div>
-                    <button className="add-cart" onClick={() => addToCart(drink)}>+</button>
-                </div>
-            ))}
+        setAddedItems((prev) => {
+            const updated = new Set(prev);
+            updated.add(item.name);
+            return updated;
+        });
+
+        setTimeout(() => {
+            setAddedItems((prev) => {
+                const updated = new Set(prev);
+                updated.delete(item.name);
+                return updated;
+            });
+        }, 1200);
+    };
+
+    return (
+        <div className="drinks-body">
+            <h1 className="title">Drinks</h1>
+
+            <div className="wrapper">
+                {drinks.map((drink) => {
+                    const isAdded = addedItems.has(drink.name);
+                    return (
+                        <div className="card" key={drink.name}>
+                            <img src={drink.image} alt={drink.name} />
+                            <div className="container">
+                                <h4>{drink.name}</h4>
+                                <p>${drink.price}</p>
+                            </div>
+                            <button className={`add-cart ${isAdded ? "added" : ""}`} onClick={() => handleAdd(drink)}>
+                                {isAdded ? "Added to cart" : "+"}
+                            </button>
+                        </div>
+                    );
+                })}
+            </div>
         </div>
-    </div>
-  );
+    );
 }
 
 export default Drinks;
