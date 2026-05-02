@@ -12,11 +12,11 @@ function App() {
   //Add item to cart
   const addToCart = (item) => {
     setCart((prev) => {
-      const existing = prev.find((i) => i.name === item.name);//check to see if the item is already in the cart
+      const existing = prev.find((i) => i.id === item.id);//check to see if the item is already in the cart
 
       if (existing) {//if exists, increase quantity by 1
         return prev.map((i) =>
-          i.name === item.name ? { ...i, quantity: i.quantity + 1 } : i
+          i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
         );
       }
 
@@ -25,11 +25,11 @@ function App() {
   };
 
     //Update quantity of item in cart
-    const updateQuantity = (name, amount) => {
+    const updateQuantity = (id, amount) => {
     setCart((prev) =>
       prev
         .map((item) =>
-          item.name === name
+          item.id === id
             ? { ...item, quantity: item.quantity + amount }
             : item
         )
@@ -38,8 +38,8 @@ function App() {
   };
 
   //Remove item from cart
-  const removeFromCart = (name) => {
-    setCart((prev) => prev.filter((item) => item.name !== name));
+  const removeFromCart = (id) => {
+    setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
   //Clear cart
