@@ -8,7 +8,7 @@ function Food() {
     const [addedItems, setAddedItems] = useState(new Set());
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/menu")
+        fetch(`${process.env.REACT_APP_API_URL}/api/menu`)
             .then((res) => res.json())
             .then((data) => setMenuItems(data));
     }, []);
