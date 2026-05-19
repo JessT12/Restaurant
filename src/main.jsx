@@ -5,13 +5,13 @@ import './index.css';
 
 import App from './App.jsx';
 
-import Home from "./pages/home";
-import Menu from "./pages/menu";
-import Contact from "./pages/contact";
-import About from "./pages/about";
-import Food from "./pages/food";
-import Drinks from "./pages/drinks";
-import Cart from "./components/cart";
+import Home from "./pages/home.jsx";
+import Menu from "./pages/menu.jsx";
+import Contact from "./pages/contact.jsx";
+import About from "./pages/about.jsx";
+import Food from "./pages/food.jsx";
+import Drinks from "./pages/drinks.jsx";
+import Cart from "./components/cart.jsx";
 
 const router = createBrowserRouter([
   {

@@ -3,10 +3,41 @@ import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
 
 function Cart({ isOpen, setIsCartOpen, cart, removeFromCart, clearCart, updateQuantity }) {
-  const total = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+const total = cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+    
+  const placeOrder = async () => {
+    if (cart.length === 0) return;
+
+    const total = cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+
+    try {
+      const res = await fetch("http://localhost:5000/api/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          cart,
+          total,
+        }),
+      });
+
+      const data = await res.json();
+      console.log("Order saved:", data);
+
+      clearCart();
+      setIsCartOpen(false);
+
+    } catch (err) {
+      console.log("Order failed:", err);
+    }
+  };
 
   return (
     <div className={`cart-tab ${isOpen ? "open" : ""}`}>
@@ -37,7 +68,7 @@ function Cart({ isOpen, setIsCartOpen, cart, removeFromCart, clearCart, updateQu
           </div>
         ))}
       </div>
-  
+
       {/* Footer (always at bottom) */}
       <div className="cart-bottom">
 
@@ -50,6 +81,8 @@ function Cart({ isOpen, setIsCartOpen, cart, removeFromCart, clearCart, updateQu
             Total: ${total}
           </div>
         </div>
+
+        <button className="place-order" onClick={placeOrder}>Place Order</button>
 
         <button className="closeCart" onClick={() => setIsCartOpen(false)}>
           Close

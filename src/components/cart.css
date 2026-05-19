@@ -133,6 +133,25 @@
   padding-top: 15px;
 }
 
+.place-order {
+  color: #0b0929; 
+  background-color: #eeecd2;
+  position: relative;
+  font-size: 18px; 
+  font-family: "Limelight", cursive; 
+  border: none; 
+  border-radius: 8px;
+  padding: 20px; 
+  height: 60px; 
+  cursor: pointer; 
+  width: 50%;
+  margin-left: 15px;
+}
+
+.place-order:hover {
+  background-color: #6e7597;
+}
+
 .clearCart {
   background-color: #0b0929;
   color: #c5c3a8;
